@@ -27,4 +27,12 @@ class CalculatorControllerTest {
                 .andReturn();
         assertThat(mvcResult.getResponse().getContentAsString()).isEqualTo("30");
     }
+    @Test
+    void substract() throws Exception {
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                        .post(calculatorPath + "/substract?num1=20&num2=10"))
+                .andExpect(status().isOk())
+                .andReturn();
+        assertThat(mvcResult.getResponse().getContentAsString()).isEqualTo("10");
+    }
 }

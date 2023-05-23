@@ -13,10 +13,14 @@ public class CalculatorController {
     @Autowired
     CalculatorController(CalculatorService calculatorService){
         this.calculatorService = calculatorService;
-    };
+    }
 
     @PostMapping("/sum")
     public BigDecimal sum(@RequestParam("num1") BigDecimal num1,@RequestParam("num2")BigDecimal num2){
         return calculatorService.sum(num1, num2);
+    }
+    @PostMapping("/substract")
+    public BigDecimal substract(@RequestParam("num1") BigDecimal num1,@RequestParam("num2")BigDecimal num2){
+        return calculatorService.substract(num1, num2);
     }
 }
