@@ -3,6 +3,7 @@ package com.example.sanitastest.controller;
 import com.example.sanitastest.service.CalculatorService;
 import io.corp.calculator.TracerImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/calculator")
-@RequiredArgsConstructor
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @EnableAutoConfiguration
 public class CalculatorController {
     private final CalculatorService calculatorService;
